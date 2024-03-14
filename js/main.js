@@ -82,6 +82,8 @@ createSwipers(".mySwiper6", ".mySwiper5");
 createSwipers(".mySwiper8", ".mySwiper7");
 createSwipers(".mySwiper10", ".mySwiper9");
 createSwipers(".mySwiper12", ".mySwiper11");
+createSwipers(".mySwiper14", ".mySwiper13");
+createSwipers(".mySwiper16", ".mySwiper15");
 
 
 var swiper = new Swiper(".gallery-slider", {
@@ -217,14 +219,59 @@ $('.show_more-btn').on('click', function () {
 });
 
 //TAB FOR SLIDER BLOCK
-$('.tab-section').each(function() {
-    let ths = $(this);
-    ths.find('.b-tab').not(':first').addClass('hidden');
-    ths.find('.b-nav-tab').click(function() {
-        ths.find('.b-nav-tab').removeClass('active').eq($(this).index()).addClass('active');
-        ths.find('.b-tab').addClass('hidden').eq($(this).index()).removeClass('hidden')
-    }).eq(0).addClass('active');
+function removeParam(key) {
+    var url = window.location.href;
+    var urlParts = url.split('?');
+    if (urlParts.length >= 2) {
+        var prefix = encodeURIComponent(key) + '=';
+        var parts = urlParts[1].split(/[&;]/g);
+
+        // Обратный цикл, чтобы не изменять длину массива во время перебора
+        for (var i = parts.length; i-- > 0;) {
+            // Удаление параметра, если он найден
+            if (parts[i].lastIndexOf(prefix, 0) !== -1) {
+                parts.splice(i, 1);
+            }
+        }
+
+        // Собираем URL-адрес без удаленного параметра
+        url = urlParts[0] + (parts.length > 0 ? '?' + parts.join('&') : '');
+        // Замена текущего URL-адреса новым без параметра
+        window.history.replaceState('', document.title, url);
+    }
+}
+
+// Проверяем параметр в URL-адресе для показа нужной вкладки
+$(document).ready(function () {
+    let tabSection = $('.tab-section');
+    let tabs = tabSection.find('.b-nav-tab');
+    let contents = tabSection.find('.b-tab');
+
+    // Скрыть все вкладки, кроме первой
+    tabs.not(':first').addClass('hidden');
+    contents.not(':first').addClass('hidden');
+
+    // Обработчик щелчка по вкладке
+    tabs.click(function () {
+        let index = $(this).index();
+        tabs.removeClass('active').eq(index).addClass('active');
+        contents.addClass('hidden').eq(index).removeClass('hidden');
+    });
+
+    // Проверка параметра в URL для показа нужной вкладки
+    let urlParams = new URLSearchParams(window.location.search);
+    let targetTab = urlParams.get('tab');
+    if (targetTab) {
+        let tabIndex = parseInt(targetTab) - 1; // Индекс начинается с 0
+        if (!isNaN(tabIndex) && tabIndex >= 0 && tabIndex < tabs.length) {
+            tabs.removeClass('active').eq(tabIndex).addClass('active');
+            contents.addClass('hidden').eq(tabIndex).removeClass('hidden');
+            // Удаляем параметр из URL-адреса после перехода на страницу
+            removeParam('tab');
+        }
+    }
 });
+
 
 $(window).on('load', function () {
     $('.preloader').delay(350).fadeOut('slow');

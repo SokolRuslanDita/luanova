@@ -1,0 +1,27 @@
+header.black .logo-header img {
+  filter: invert(1);
+}
+
+header.black .navbar-wrap ul li a {
+  color: var(--black);
+}
+header.black .navbar-wrap ul li a.active {
+  border-color: var(--black);
+}
+
+header.black {
+  border-bottom: 1px solid rgba(19, 19, 19, 0.1);
+  background: var(--white);
+}
+
+header.black .role-btn {
+  color: var(--black);
+  border-color: var(--black);
+}
+header.black .role-btn:hover {
+  color: var(--red);
+  border-color: var(--red);
+  background: transparent;
+}
+
+/*# sourceMappingURL=header-black.css.map */

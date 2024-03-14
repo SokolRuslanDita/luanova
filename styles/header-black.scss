@@ -1,0 +1,32 @@
+header.black .logo-header img {
+  filter: invert(1);
+}
+header.black .navbar-wrap ul li a {
+  color: var(--black);
+  &.active {
+    border-color: var(--black);
+  }
+}
+header.black.scroll-header .navbar-wrap ul li a {
+
+}
+header.black {
+  border-bottom: 1px solid rgba(19, 19, 19, 0.10);
+  background: var(--white);
+}
+
+header.black .role-btn {
+  color: var(--black);
+  border-color: var(--black);
+  &:hover {
+    color: var(--red);
+    border-color: var(--red);
+    background: transparent;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  header.black .navbar-wrap ul li a.active {
+    border-color: var(--white) !important;
+  }
+}

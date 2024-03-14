@@ -21,6 +21,7 @@
 :root {
     --black: #131313;
     --white: #fff;
+    --red: #E34D3F;
 }
 
 *::-webkit-scrollbar-track {
@@ -139,8 +140,8 @@ p{
     border-radius: 50%;
     transition: all 0.3s;
     &:hover {
-        border: 1px solid #E34D3F;
-        background: #E34D3F;
+        border: 1px solid var(--red);
+        background: var(--red);
     }
 }
 .line-btn  {
@@ -197,6 +198,12 @@ header {
     width: 100%;
     z-index: 99;
     padding: 24px 0;
+    .navbar-wrap ul li a {
+        color: var(--white);
+        &.active {
+            border-color: var(--white);
+        }
+    }
     &.scroll-header {
         background: var(--white);
         .logo-header {
@@ -206,13 +213,16 @@ header {
         }
         .navbar-wrap ul li a {
             color: var(--black);
+            &.active {
+                border-color: var(--black);
+            }
         }
         .role-btn {
             color: var(--black);
             border-color: var(--black);
             &:hover {
-                border: 1.5px solid #E34D3F;
-                color: #E34D3F;
+                border: 1.5px solid var(--red);
+                color: var(--red);
                 background: transparent;
             }
         }
@@ -447,8 +457,8 @@ header {
          color: var(--black);
          border-color: var(--black);
          &:hover {
-             border: 1.5px solid #E34D3F;
-             color: #E34D3F;
+             border: 1.5px solid var(--red);
+             color: var(--red);
              background: transparent;
          }
      }
@@ -512,8 +522,8 @@ header {
             color: var(--black);
             border: 1.5px solid var(--black);
             &:hover {
-                border: 1.5px solid #E34D3F;
-                color: #E34D3F;
+                border: 1.5px solid var(--red);
+                color: var(--red);
                 background: transparent;
             }
         }
@@ -577,8 +587,8 @@ header {
             color: var(--black);
             border-color: var(--black);
             &:hover {
-                border: 1.5px solid #E34D3F;
-                color: #E34D3F;
+                border: 1.5px solid var(--red);
+                color: var(--red);
                 background: transparent;
             }
         }
@@ -617,8 +627,8 @@ header {
                 border: 1px solid var(--black);
                 margin-bottom: 48px;
                 &:hover {
-                    border: 1px solid #E34D3F;
-                    color: #E34D3F;
+                    border: 1px solid var(--red);
+                    color: var(--red);
                     background: transparent;
                 }
             }
@@ -753,6 +763,33 @@ header {
         width: 100%;
         height: 100%;
         object-fit: cover;
+    }
+}
+
+.gift-card {
+    padding: 80px 0;
+    background: url("../images/gift-card.jpeg") no-repeat center/cover;
+    .label {
+        display: block;
+        margin-bottom: 40px;
+        font-size: 12px;
+        letter-spacing: 1.44px;
+        text-transform: uppercase;
+    }
+    .title {
+        margin-bottom: 40px;
+    }
+    p {
+        margin-bottom: 48px;
+        max-width: 480px;
+        width: 100%;
+    }
+    .line-btn {
+        padding: 10px 0 11px;
+        color: var(--black);
+        img {
+            filter: invert(0);
+        }
     }
 }
 

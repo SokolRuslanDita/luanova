@@ -4,6 +4,21 @@
   }
 }
 @media screen and (max-width: 1199px) {
+  header.black .mob-menu-btn img {
+    filter: invert(1);
+  }
+  header.black.scroll-header .mob-menu-btn img {
+    filter: invert(0);
+  }
+  header.black .navbar-wrap ul li a {
+    color: var(--white);
+  }
+  header#header.black.active .logo-header img {
+    filter: invert(0);
+  }
+  header#header.black.active .mob-menu-btn img {
+    filter: invert(0);
+  }
   header.scroll-header {
     background: var(--black);
   }
@@ -202,8 +217,24 @@
     justify-content: center;
     gap: 32px;
   }
+  .gift-card {
+    padding: 60px 0 200px;
+    background: url(../images/gift-card-mob.jpeg) no-repeat center/cover;
+  }
+  .gift-card .label {
+    margin-bottom: 24px;
+  }
+  .gift-card .title {
+    margin-bottom: 24px;
+  }
+  .gift-card p {
+    margin-bottom: 24px;
+  }
   .gallery {
     padding: 40px 0 60px;
+  }
+  .gallery .title {
+    padding: 0 24px;
   }
   .gallery .title {
     margin: 0 auto 40px;
@@ -376,6 +407,9 @@
   }
   .no-hidden-slider .modal-team .modal-team_wrapper .modal-team-wrap {
     padding: 40px 0;
+  }
+  .no-hidden-slider .modal-team .modal-team_wrapper .modal-team-wrap .bottom-block {
+    gap: 12px;
   }
   .teams .teams-item .modal-team-wrap__cont span.name {
     margin-bottom: 24px;

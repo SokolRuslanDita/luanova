@@ -1,0 +1,161 @@
+@import "header-black";
+
+.special-page {
+  padding-top: 180px;
+  padding-bottom: 100px;
+
+  .services-top {
+    margin-bottom: 60px;
+
+    .title {
+      text-align: center;
+    }
+
+    p {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 60px;
+      position: relative;
+
+    }
+  }
+
+  .special-items {
+    .flex {
+      gap: 60px;
+      .special-item {
+        width: calc(50% - 30px);
+        border: 1px solid #EEE;
+        background: #FFFAF8;
+        .special-item__main-info {
+          display: flex;
+          justify-content: space-between;
+          .main-info__cont {
+            text-align: center;
+            padding: 10px;
+            width: 100%;
+            height: inherit;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 0;
+            align-content: center;
+            background: url("../images/text-bg.png") no-repeat center/cover;
+            border-bottom: 1px solid #EEE;
+            .title {
+              font-size: 40px;
+              line-height: 1.1;
+              margin-bottom: 40px;
+              text-align: center;
+              span {
+                font-size: 40px;
+                line-height: 1.1;
+                margin-bottom: 40px;
+              }
+            }
+            span.text {
+              font-size: 12px;
+              font-weight: 400;
+              letter-spacing: 1.44px;
+              text-transform: uppercase;
+              display: block;
+              text-align: center;
+              margin-bottom: 24px;
+              width: 100%;
+            }
+           .label {
+              display: flex;
+              padding: 12px 40px;
+              justify-content: center;
+              align-items: flex-start;
+              background: var(--black);
+              color: var(--white);
+              max-width: 231px;
+              margin: 0 auto;
+              font-size: 20px;
+              font-weight: 500;
+              line-height: 24px; /* 120% */
+              text-transform: uppercase;
+              text-align: center;
+            }
+          }
+          .main-info__img {
+            img {
+              display: block;
+            }
+          }
+        }
+        .special-item__bottom {
+          padding: 32px;
+          .subtitle {
+            color: var(--black);
+            font-size: 12px;
+            font-weight: 400;
+            line-height: normal;
+            letter-spacing: 1.44px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .special-page .special-items .flex .special-item {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .special-page {
+    padding-top: 140px;
+    padding-bottom: 60px;
+  }
+  .special-page .services-top .title {
+    margin-bottom: 32px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .special-page .special-items .flex .special-item .special-item__main-info .main-info__cont span.text {
+    font-size: 6.651px;
+    letter-spacing: 0.798px;
+    margin-bottom: 13.3px;
+  }
+  .special-page .special-items .flex .special-item .special-item__main-info .main-info__cont .title,
+  .special-page .special-items .flex .special-item .special-item__main-info .main-info__cont .title span {
+    margin-bottom: 22.17px;
+    font-size: 22.169px;
+    line-height: 24.386px;
+  }
+  .special-page .special-items .flex .special-item .special-item__main-info .main-info__cont .label {
+    font-size: 11.085px;
+    font-weight: 500;
+    line-height: 13.302px;
+    padding: 6.651px 22.169px;
+  }
+  .special-page .special-items .flex .special-item .special-item__bottom {
+    padding: 17.736px;
+  }
+  .special-page .special-items .flex .special-item .special-item__bottom .subtitle {
+    margin-bottom: 8.87px;
+    font-size: 6.651px;
+    letter-spacing: 0.798px;
+  }
+
+  .special-page .special-items .flex .special-item .special-item__bottom p {
+    font-size: 8.868px;
+    line-height: 13.302px;
+  }
+  .special-page .special-items .flex .special-item .special-item__main-info .main-info__img img {
+    max-width: 130px;
+  }
+  .special-page .special-items .flex {
+    gap: 32px;
+  }
+}
